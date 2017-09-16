@@ -1,0 +1,16 @@
+{
+  "common_tags": {
+    "tag_1": "bla bla tag 1",
+    "tag_2": "bla bla tag 2",
+    "tag_3": "bla bla tag 3",
+    "tag_4": "bla bla tag 4"
+  },
+  "brand_512": {
+    "tag_3": "bla bla brand 512 tag 3"
+  },
+  "brand_93": {
+    "tag_1": "bla bla brand 93 tag 1",
+    "tag_2": "bla bla brand 93 tag 2"
+  },
+  "language": "ja"
+}

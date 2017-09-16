@@ -1,0 +1,43 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: java-dynamo
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: java8
+  profile: serverless-admin
+  region: eu-central-1
+
+  environment:
+    APP_LOG_LEVEL: ERROR
+    DYNAMO_ACCESS_KEY: ACCESS_KEY
+    DYNAMO_SECRET_KEY: SECRET_KEY
+    APP_AWS_REGION: MY_REGION
+
+package:
+  artifact: target/java-dynamo-1.29.03.jar
+
+functions:
+  getTags:
+    handler: com.serverless.TagsHandler
+    events:
+      - http:
+          path: java-dynamo/tags/{brand_id}/{language}
+          method: get
+          cors: true
+
